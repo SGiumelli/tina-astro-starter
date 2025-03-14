@@ -1,6 +1,7 @@
 import { tinaField, useTina } from "tinacms/dist/react";
 import type { PageQuery, PageQueryVariables } from "../__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import ClientComponent from "../../src/components/react/ClientComponent";
 
 type Props = {
 	variables: PageQueryVariables;
@@ -21,6 +22,7 @@ const HomePage = (props: Props) => {
 	return (
 		<main>
 			<div data-tina-field={tinaField(page, "body")}>
+				<ClientComponent />
 				<TinaMarkdown content={page.body} />
 			</div>
 		</main>
